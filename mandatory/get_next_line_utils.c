@@ -6,11 +6,11 @@
 /*   By: araiteb <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 20:40:15 by araiteb           #+#    #+#             */
-/*   Updated: 2022/11/12 17:51:08 by araiteb          ###   ########.fr       */
+/*   Updated: 2022/11/18 18:22:23 by araiteb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"get_next_line.h"
+#include "get_next_line.h"
 
 size_t	ft_strlen(const char *str)
 {
@@ -44,6 +44,7 @@ void	*ft_memcpy(const void *dst, const void *src, size_t n)
 	}
 	return (NULL);
 }
+
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*p;
@@ -61,8 +62,8 @@ char	*ft_strjoin(char *s1, char *s2)
 	size_t	l1;
 	size_t	l2;
 
-	if (!s1 || !s2)
-		return (NULL);
+	if (!s1)
+		s1 = ft_strdup("");
 	l2 = ft_strlen(s2);
 	l1 = ft_strlen(s1);
 	new = (char *)malloc((l1 + l2 + 1) * sizeof(char));
@@ -71,6 +72,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	ft_memcpy(new, s1, l1);
 	ft_memcpy((new + l1), s2, l2);
 	new[l1 + l2] = '\0';
+	free(s1);
 	return (new);
 }
 
@@ -112,6 +114,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	new[len] = '\0';
 	return (new);
 }
+
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s != (char)c)
@@ -121,7 +124,25 @@ char	*ft_strchr(const char *s, int c)
 		s++;
 	}
 	return ((char *)s);
-} 
+}
+
+int	ft_index(const char *s, char c)
+{
+	unsigned int	i;
+
+	if (!s)
+		return (-1);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+			return (i);
+		i++;
+	}
+	if (s[i] == c)
+		return (i);
+	return (-1);
+}
 
 char	*ft_strdup(const char *s)
 {
@@ -139,4 +160,3 @@ char	*ft_strdup(const char *s)
 	tp[i] = '\0';
 	return (tp);
 }
-
