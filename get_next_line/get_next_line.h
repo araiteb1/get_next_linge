@@ -6,7 +6,7 @@
 /*   By: araiteb <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 20:39:29 by araiteb           #+#    #+#             */
-/*   Updated: 2022/11/18 18:19:00 by araiteb          ###   ########.fr       */
+/*   Updated: 2022/11/20 15:57:42 by araiteb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <string.h>
 # include <unistd.h>
 
-# define BUFFER_SIZE 1
+//# define BUFFER_SIZE 1
 
 void	ft_putendl_fd(char *s, int fd);
 char	**ft_split(const char *s, char c);

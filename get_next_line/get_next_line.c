@@ -6,7 +6,7 @@
 /*   By: araiteb <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 01:30:19 by araiteb           #+#    #+#             */
-/*   Updated: 2022/11/18 18:21:02 by araiteb          ###   ########.fr       */
+/*   Updated: 2022/11/20 18:03:30 by araiteb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,18 @@ char	*ft_remain(char *line)
 {
 	char	*str;
 	int		start;
-
+	
 	start = ft_index(line, '\n');
-	if (line[start] == '\n')
+	if(start == -1)
+		start = ft_strlen(line);
+	if (line[start] && line[start] == '\n')
 		start++;
 	if (line[start] == '\0')
 	{
 		free(line);
 		return (NULL);
 	}
-	str = ft_substr(line, start, (ft_strlen(line) - start + 1));
+	str = ft_substr(line, start, (ft_strlen(line) - start));
 	free(line);
 	return (str);
 }
@@ -87,10 +89,10 @@ char	*get_next_line(int fd)
 
 /*int main()
 {
-	int fd = open("file.txt", O_RDONLY);
+	int fd = open("file.te", O_RDONLY);
 	printf("[%s]",get_next_line(fd));
 	printf("[%s]",get_next_line(fd));
-	printf("[%s]",get_next_line(fd));
-	printf("[%s]",get_next_line(fd));
-	printf("[%s]",get_next_line(fd));
+	// printf("[%s]",get_next_line(fd));
+	// printf("[%s]",get_next_line(fd));
+	// printf("[%s]",get_next_line(fd));
 }*/

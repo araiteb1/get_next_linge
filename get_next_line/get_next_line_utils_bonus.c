@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: araiteb <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 20:40:15 by araiteb           #+#    #+#             */
-/*   Updated: 2022/11/18 18:22:23 by araiteb          ###   ########.fr       */
+/*   Created: 2022/11/19 11:43:47 by araiteb           #+#    #+#             */
+/*   Updated: 2022/11/20 18:12:50 by araiteb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(const char *str)
 {
@@ -97,7 +97,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	lens = ft_strlen(s);
 	if (start >= lens || len == 0)
-		return (ft_calloc(1, sizeof(char)));
+		return (NULL);
 	if ((start + len) >= lens)
 	{
 		new = (char *)malloc(((lens - start) + 1) * sizeof(char));
