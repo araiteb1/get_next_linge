@@ -6,7 +6,7 @@
 /*   By: araiteb <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 11:46:37 by araiteb           #+#    #+#             */
-/*   Updated: 2022/11/20 18:06:05 by araiteb          ###   ########.fr       */
+/*   Updated: 2022/11/23 15:43:06 by araiteb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ char	*ft_read_line(int fd, char *line)
 		if (i == -1)
 		{
 			free(str);
+			free(line);
 			return (NULL);
 		}
 		str[i] = '\0';
@@ -58,7 +59,7 @@ char	*ft_remain(char *line)
 	int		start;
 
 	start = ft_index(line, '\n');
-	if(start == -1)
+	if (start == -1)
 		start = ft_strlen(line);
 	if (line[start] == '\n')
 		start++;

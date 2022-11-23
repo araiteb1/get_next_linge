@@ -6,7 +6,7 @@
 /*   By: araiteb <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 20:40:15 by araiteb           #+#    #+#             */
-/*   Updated: 2022/11/20 18:36:46 by araiteb          ###   ########.fr       */
+/*   Updated: 2022/11/23 15:44:58 by araiteb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,6 @@ void	*ft_memcpy(const void *dst, const void *src, size_t n)
 		return (d);
 	}
 	return (NULL);
-}
-
-void	*ft_calloc(size_t count, size_t size)
-{
-	void	*p;
-
-	p = (void *)malloc(size * count);
-	if (!p)
-		return (NULL);
-	ft_bzero(p, count * size);
-	return (p);
 }
 
 char	*ft_strjoin(char *s1, char *s2)
